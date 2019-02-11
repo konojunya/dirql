@@ -3,12 +3,16 @@
   "version": "0.0.0",
   "description": "dirql displays files and directories with syntax like sql cli.",
   "keywords": [
-    "dirql", "cli", "sql"
+    "dirql",
+    "cli",
+    "sql"
   ],
   "author": "konojunya <junya03dance@gmail.com>",
   "homepage": "https://github.com/konojunya/dirql",
   "license": "MIT",
-  "main": "lib/index.js",
+  "bin": {
+    "dirql": "./bin/dirql.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/konojunya/dirql.git"

@@ -8,7 +8,7 @@
   "author": "konojunya <junya03dance@gmail.com>",
   "homepage": "https://github.com/konojunya/dirql",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/konojunya/dirql.git"
