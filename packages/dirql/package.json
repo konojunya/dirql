@@ -24,9 +24,9 @@
     "url": "https://github.com/konojunya/dirql/issues"
   },
   "dependencies": {
-    "inquirer": "^6.2.2"
+    "inquirer": "6.2.2"
   },
   "devDependencies": {
-    "@types/inquirer": "^0.0.43"
+    "@types/inquirer": "0.0.43"
   }
 }
