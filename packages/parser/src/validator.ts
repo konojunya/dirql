@@ -1,4 +1,5 @@
 import fs from "fs";
+import { resolve } from "path";
 import { ParsedInput } from "./";
 
 // expect
@@ -67,11 +68,13 @@ const isExpectFieldType = (field: string): boolean => {
 const isValidPath = (path: string): boolean => {
   let inValid = false;
 
-  fs.stat(path, (err) => {
+  const filePath = resolve(process.cwd(), path);
+
+  fs.stat(filePath, (err) => {
     if (err) {
       inValid = true
     }
   });
 
-  return inValid;
+  return !inValid;
 }
