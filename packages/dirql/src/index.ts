@@ -5,9 +5,15 @@ import fs from "fs";
 import { resolve } from "path"
 
 interface File {
-  isFile: boolean;
-  name: string;
-  size: number;
+  name?: string;
+  size?: number;
+}
+
+enum FieldType {
+  Name,
+  Size,
+  NameAndSize,
+  All
 }
 
 const init = async (questions: Questions) => {
@@ -15,19 +21,62 @@ const init = async (questions: Questions) => {
   const parsedData = parser(input.query);
   const files = walk(parsedData.field, parsedData.path);
   show(files);
+  init(questions);
 }
 init(questions);
 
-const walk = (_field: string, path: string): File[] => {
+const walk = (field: string, path: string): File[] => {
+  const fieldType = mapField(field);
   const filenames = fs.readdirSync(resolve(process.cwd(), path));
   return filenames.map((filename) => {
-    const stats = fs.statSync(resolve(process.cwd(), path + filename))
-    return ({
-      isFile: stats.isFile(),
-      name: filename,
-      size: stats.size
-    })
+    const stats = fs.statSync(resolve(process.cwd(), path + filename));
+
+    // common file info
+    const file: File = {}
+
+    switch (fieldType) {
+      case FieldType.Name:
+        return ({
+          ...file, ...{
+            name: filename
+          }
+        });
+      case FieldType.Size:
+        return ({
+          ...file, ...{
+            size: stats.size
+          }
+        });
+      case FieldType.NameAndSize:
+        return ({
+          ...file, ...{
+            name: filename,
+            size: stats.size
+          }
+        });
+      case FieldType.All:
+        return ({
+          ...file, ...{
+            name: filename,
+            size: stats.size
+          }
+        });
+    }
   })
+}
+
+const mapField = (field: string): FieldType => {
+  switch (field) {
+    case "name":
+      return FieldType.Name;
+    case "size":
+      return FieldType.Size;
+    case "name,size":
+    case "size,name":
+      return FieldType.NameAndSize;
+    default:
+      return FieldType.All;
+  }
 }
 
 const show = (files: File[]) => {
