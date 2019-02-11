@@ -1,0 +1,22 @@
+{
+  "name": "dirql-parser",
+  "version": "0.0.0",
+  "description": "dirql parser",
+  "keywords": [
+    "dirql", "sql", "cli"
+  ],
+  "author": "konojunya <junya03dance@gmail.com>",
+  "homepage": "https://github.com/konojunya/dirql",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/konojunya/dirql.git"
+  },
+  "scripts": {
+    "build": "tsc --project ."
+  },
+  "bugs": {
+    "url": "https://github.com/konojunya/dirql/issues"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "dirql",
+  "version": "0.0.0",
+  "description": "dirql displays files and directories with syntax like sql cli.",
+  "keywords": [
+    "dirql", "cli", "sql"
+  ],
+  "author": "konojunya <junya03dance@gmail.com>",
+  "homepage": "https://github.com/konojunya/dirql",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/konojunya/dirql.git"
+  },
+  "scripts": {
+    "build": "tsc --project ."
+  },
+  "bugs": {
+    "url": "https://github.com/konojunya/dirql/issues"
+  },
+  "dependencies": {
+    "inquirer": "^6.2.2"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^0.0.43"
+  }
+}

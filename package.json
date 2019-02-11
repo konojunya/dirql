@@ -1,0 +1,16 @@
+{
+  "name": "dirql",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": "ssh://git@github.com/konojunya/dirql.git",
+  "author": "konojunya <junya03dance@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^3.11.0",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.3.3"
+  }
+}
