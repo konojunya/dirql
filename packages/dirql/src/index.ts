@@ -29,7 +29,7 @@ const walk = (field: string, path: string): File[] => {
   const fieldType = mapField(field);
   const filenames = fs.readdirSync(resolve(process.cwd(), path));
   return filenames.map((filename) => {
-    const stats = fs.statSync(resolve(process.cwd(), path + filename));
+    const stats = fs.statSync(resolve(process.cwd(), `${path}/${filename}`));
 
     // common file info
     const file: File = {}
