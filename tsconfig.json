@@ -10,6 +10,7 @@
     "declarationMap": false,
     "sourceMap": true,
     "pretty": true,
+    "resolveJsonModule": true,
     "removeComments": false,
     "noEmit": false,
     "noImplicitAny": false,

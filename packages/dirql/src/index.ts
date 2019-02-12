@@ -1,6 +1,9 @@
 import inquirer, { Questions } from "inquirer";
+import pkg from "../package.json";
+import program from "commander";
+import colors from "colors-cli";
 import { parser } from "../../parser/src/index";
-import { questions, Answer } from "./questions";
+import { Answer, questions } from "./questions";
 import fs from "fs";
 import { resolve } from "path"
 
@@ -23,7 +26,7 @@ const init = async (questions: Questions) => {
   show(files);
   init(questions);
 }
-init(questions);
+// init(questions);
 
 const walk = (field: string, path: string): File[] => {
   const fieldType = mapField(field);
@@ -82,3 +85,20 @@ const mapField = (field: string): FieldType => {
 const show = (files: File[]) => {
   console.table(files);
 }
+
+// version
+program.version(pkg.version, "-v, --version")
+
+// help
+program.on("--help", () => {
+  console.log("");
+  console.log("Examples:");
+  console.log(` dirql> select * from ./\t${colors.black_bt("// display all field")}`);
+  console.log(` dirql> select name from ./\t${colors.black_bt("// display name field")}`);
+  console.log(` dirql> select name from /usr\t${colors.black_bt("// display absolute path")}`);
+});
+program.action(() => {
+  init(questions);
+})
+
+program.parse(process.argv);
