@@ -31,6 +31,9 @@ references:
 
   deps: &deps
     run:
+      name: lerna install
+      command: yarn --pure-lockfile
+    run:
       name: Install dependencies
       command: lerna exec yarn install
 
