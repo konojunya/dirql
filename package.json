@@ -2,6 +2,7 @@
   "name": "dirql",
   "version": "0.0.0",
   "main": "index.js",
+  "private": true,
   "repository": "ssh://git@github.com/konojunya/dirql.git",
   "author": "konojunya <junya03dance@gmail.com>",
   "license": "MIT",
