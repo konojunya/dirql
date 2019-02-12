@@ -9,6 +9,11 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "deps": "lerna exec yarn install",
+    "build": "lerna run build",
+    "lint": "lerna run lint"
+  },
   "dependencies": {},
   "devDependencies": {
     "@types/node": "11.9.0",

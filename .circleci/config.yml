@@ -27,12 +27,11 @@ references:
       command: |
         echo "Node $(node -v)"
         echo "Yarn v$(yarn --version)"
-        echo "Lerna v$(lerna -v)"
 
   deps: &deps
     run:
       name: Install dependencies
-      command: lerna exec yarn install
+      command: yarn deps
 
   docker_image_for_ci: &docker_image_for_ci
     docker:
@@ -53,7 +52,7 @@ jobs:
       - checkout
       - *system_info
       - run:
-          name: install lerna
+          name: install root package deps
           command: yarn --pure-lockfile
       - *deps
       - *yarn_save_cache
@@ -69,7 +68,7 @@ jobs:
       - *attach_workspace
       - run:
           name: lint
-          command: lerna run lint
+          command: yarn lint
 
   run_build:
     executor: node_stage
@@ -78,7 +77,7 @@ jobs:
       - *attach_workspace
       - run:
           name: build
-          command: lerna run build
+          command: yarn build
 
 workflows:
   build_and_deploy:
