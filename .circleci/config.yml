@@ -31,9 +31,6 @@ references:
 
   deps: &deps
     run:
-      name: lerna install
-      command: yarn --pure-lockfile
-    run:
       name: Install dependencies
       command: lerna exec yarn install
 
@@ -55,6 +52,9 @@ jobs:
     steps:
       - checkout
       - *system_info
+      - run:
+          name: install lerna
+          command: yarn --pure-lockfile
       - *deps
       - *yarn_save_cache
       - persist_to_workspace:
