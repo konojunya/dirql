@@ -93,9 +93,9 @@ program.version(pkg.version, "-v, --version")
 program.on("--help", () => {
   console.log("");
   console.log("Examples:");
-  console.log(` dirql> select * from ./\t${colors.black_bt("// display all field")}`);
-  console.log(` dirql> select name from ./\t${colors.black_bt("// display name field")}`);
-  console.log(` dirql> select name from /usr\t${colors.black_bt("// display absolute path")}`);
+  console.log(`  dirql> select * from ./\t${colors.black_bt("// display all field")}`);
+  console.log(`  dirql> select name from ./\t${colors.black_bt("// display name field")}`);
+  console.log(`  dirql> select name from /usr\t${colors.black_bt("// display absolute path")}`);
 });
 program.action(() => {
   init(questions);
