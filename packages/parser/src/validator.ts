@@ -1,22 +1,16 @@
-import fs from "fs";
-import { resolve } from "path";
-import { ParsedInput } from "./";
+import fs from 'fs';
+import { resolve } from 'path';
+import { ParsedInput } from './';
 
 // expect
-const expectCommands = ["select"];
-const expectKeys = ["from"];
-const expectFields = [
-  "*",
-  "name",
-  "size",
-  "name,size",
-  "size,name"
-];
+const expectCommands = ['select'];
+const expectKeys = ['from'];
+const expectFields = ['*', 'name', 'size', 'name,size', 'size,name'];
 
 export const validate = (q: string[]): ParsedInput => {
   // expect command length 4
   if (q.length !== 4) {
-    console.error("The command syntax is incorrect.\nExample: select * from ./");
+    console.error('The command syntax is incorrect.\nExample: select * from ./');
     process.exit(1);
   }
 
@@ -49,21 +43,21 @@ export const validate = (q: string[]): ParsedInput => {
     command,
     field,
     key,
-    path
-  }
-}
+    path,
+  };
+};
 
 const isExpectCommandType = (command: string): boolean => {
-  return !!expectCommands.find(c => c === command);
-}
+  return !!expectCommands.find((c) => c === command);
+};
 
 const isExpectKeyType = (key: string): boolean => {
-  return !!expectKeys.find(k => k === key);
-}
+  return !!expectKeys.find((k) => k === key);
+};
 
 const isExpectFieldType = (field: string): boolean => {
-  return !!expectFields.find(f => f === field);
-}
+  return !!expectFields.find((f) => f === field);
+};
 
 const isValidPath = (path: string): boolean => {
   let inValid = false;
@@ -72,9 +66,9 @@ const isValidPath = (path: string): boolean => {
 
   fs.stat(filePath, (err) => {
     if (err) {
-      inValid = true
+      inValid = true;
     }
   });
 
   return !inValid;
-}
+};

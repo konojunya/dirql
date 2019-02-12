@@ -18,15 +18,17 @@
     "url": "git+ssh://git@github.com/konojunya/dirql.git"
   },
   "scripts": {
-    "build": "tsc --project ."
+    "build": "tsc --project .",
+    "lint": "tslint -c ../../tslint.json -p tsconfig.json -t verbose 'src/**/*.ts'",
+    "lint:fix": "yarn run lint --fix"
   },
   "bugs": {
     "url": "https://github.com/konojunya/dirql/issues"
   },
   "dependencies": {
-    "inquirer": "6.2.2",
     "colors-cli": "1.0.21",
-    "commander": "2.19.0"
+    "commander": "2.19.0",
+    "inquirer": "6.2.2"
   },
   "devDependencies": {
     "@types/commander": "2.12.2",

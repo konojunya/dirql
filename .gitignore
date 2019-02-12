@@ -64,3 +64,5 @@ lerna-debug.log
 npm-debug.log
 packages/*/dist
 .DS_Store
+
+yarn-error.log

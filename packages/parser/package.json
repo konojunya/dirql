@@ -16,7 +16,9 @@
     "url": "git+ssh://git@github.com/konojunya/dirql.git"
   },
   "scripts": {
-    "build": "tsc --project ."
+    "build": "tsc --project .",
+    "lint": "tslint -c ../../tslint.json -p tsconfig.json -t verbose 'src/**/*.ts'",
+    "lint:fix": "yarn run lint --fix"
   },
   "bugs": {
     "url": "https://github.com/konojunya/dirql/issues"

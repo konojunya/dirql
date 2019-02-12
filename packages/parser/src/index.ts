@@ -1,4 +1,4 @@
-import { validate } from "./validator";
+import { validate } from './validator';
 
 export interface ParsedInput {
   command: string;
@@ -12,6 +12,6 @@ export interface ParsedInput {
  * `select * from ./`
  */
 export const parser = (query: string): ParsedInput => {
-  const splitedQuery = query.split(" ");
+  const splitedQuery = query.split(' ');
   return validate(splitedQuery);
-}
+};
