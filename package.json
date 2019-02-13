@@ -18,7 +18,7 @@
   "devDependencies": {
     "@types/node": "11.9.0",
     "lerna": "3.11.1",
-    "prettier": "^1.16.4",
+    "prettier": "1.16.4",
     "tslint": "5.12.1",
     "tslint-config-prettier": "1.18.0",
     "tslint-plugin-prettier": "2.0.1",
