@@ -26,7 +26,7 @@
     "url": "https://github.com/konojunya/dirql/issues"
   },
   "dependencies": {
-    "colors-cli": "1.0.21",
+    "colors-cli": "1.0.26",
     "commander": "2.19.0",
     "inquirer": "6.2.2"
   },
