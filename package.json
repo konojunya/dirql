@@ -16,7 +16,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/node": "11.9.6",
+    "@types/node": "11.13.22",
     "lerna": "3.13.1",
     "prettier": "1.16.4",
     "tslint": "5.14.0",
