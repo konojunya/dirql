@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "colors-cli": "1.0.21",
-    "commander": "2.19.0",
+    "commander": "3.0.2",
     "inquirer": "7.0.0"
   },
   "devDependencies": {
